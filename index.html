@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personagens de League of Legends</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Personagens de League of Legends</h1>
+        <div id="champions"></div>
+        <script>
+            async function loadChampions() {
+                try {
+                    const response = await fetch('/champions');
+                    const champions = await response.json();
+                    const championsContainer = document.getElementById('champions');
+                    champions.forEach(champion => {
+                        const championElement = document.createElement('div');
+                        championElement.classList.add('champion');
+                        championElement.innerHTML = `<h2>${champion.name}</h2><img src="${champion.image}" alt="${champion.name}">`;
+                        championsContainer.appendChild(championElement);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar personagens:', error);
+                }
+            }
+            window.onload = loadChampions;
+        </script>
+    </body>
+</html>

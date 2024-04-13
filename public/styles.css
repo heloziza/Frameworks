@@ -1,0 +1,53 @@
+body {
+  background-color: #1f1f1f;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#champions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.champion {
+  margin: 10px;
+  padding: 20px;
+  background-color: #2f2f2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0000001a;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.champion img {
+  width: 150px;
+  height: auto;
+  border: 5px solid transparent;
+  border-radius: 50%;
+}
+
+.champion:hover img {
+  border-color: #fff;
+}
+
+.champion h2 {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 5px;
+}
